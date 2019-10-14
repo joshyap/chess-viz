@@ -9,15 +9,24 @@
 // const myJson = await response.json();
 // console.log(JSON.stringify(myJson));
 
+const chess_url = 'https://api.chess.com/pub/player/yosh713/stats';
 
-async function getData() {
-    const response = await fetch('https://api.chess.com/pub/player/yosh713/stats');
-    const myJson = await response.json();
-    console.log(myJson);
-    // document.getElementsByClassName('ratings').innerHTML = myJson;
+async function getChessData() {
+    const response = await fetch(chess_url);
+    const data = await response.json();
+    console.log(data);
+    // console.log('chess blitz best rating is ' + data.chess_blitz.best.rating);
+    // const { chess_blitz, chess_bullet, lessons, puzzle_rush, tactics } = data;
+    // console.log(chess_blitz + '\n' + chess_bullet + '\n' + lessons + '\n' + puzzle_rush + '\n' + tactics);
+
+    document.getElementById('chess_blitz').textContent = data.chess_blitz.best.rating;
+    document.getElementById('chess_bullet').textContent = data.chess_bullet.best.rating;
+    document.getElementById('lessons').textContent = data.chess_blitz.best.rating;
+    document.getElementById('puzzle_rush').textContent = data.chess_blitz.best.rating;
+    document.getElementById('tactics').textContent = data.tactics.highest.rating;
 }
 
-getData();
+getChessData();
 
 
 var data = [1, 2, 3, 4, 5];
