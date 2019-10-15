@@ -2,6 +2,7 @@
 // https://api.chess.com/pub/player/yosh713/stats
 // https://youtu.be/C4t6qfHZ6Tw?t=465
 // https://scotch.io/tutorials/how-to-use-the-javascript-fetch-api-to-get-data
+//https://www.youtube.com/watch?v=uxf0--uiX0I
 
 // const url = 'https://api.chess.com/pub/player/yosh713/stats';
 
@@ -29,7 +30,14 @@ async function getChessData() {
 getChessData();
 
 
-var data = [1, 2, 3, 4, 5];
+var data = ['d3 data will be loaded here'];
+// let data = [
+//     data.chess_blitz.best.rating,
+//     data.chess_bullet.best.rating,
+//     data.chess_blitz.best.rating,
+//     data.chess_blitz.best.rating,
+//     data.tactics.highest.rating
+// ]
 
 // var x = d3.scale.linear()
 //     .domain([0, d3.max(data)])
