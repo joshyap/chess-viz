@@ -13,23 +13,22 @@ async function getChessData() {
 
     document.getElementById('chess_blitz').textContent = data.chess_blitz.best.rating;
     document.getElementById('chess_bullet').textContent = data.chess_bullet.best.rating;
-    document.getElementById('lessons').textContent = data.chess_blitz.best.rating;
-    document.getElementById('puzzle_rush').textContent = data.chess_blitz.best.rating;
+    document.getElementById('lessons').textContent = data.lessons.highest.rating;
+    document.getElementById('puzzle_rush').textContent = data.puzzle_rush.best.score;
     document.getElementById('tactics').textContent = data.tactics.highest.rating;
 
 
     let chessData = [
         data.chess_blitz.best.rating,
         data.chess_bullet.best.rating,
-        data.chess_blitz.best.rating,
-        data.chess_blitz.best.rating,
+        data.lessons.highest.rating,
+        data.puzzle_rush.best.score,
         data.tactics.highest.rating
     ]
     
     console.log(chessData);
 }
 
-getChessData();
 
 
 // var data = ['d3 data will be loaded here'];
@@ -54,9 +53,9 @@ getChessData();
 //     .style("width", function(d) { return x(d) + "px"; })
 //     .text(function(d) { return d; });
 
-d3.select('.chart')
-    .selectAll('p')
-    .data(data)
-    .enter()
-    .append('p')
-    .text(function(d) { return d; });
+// d3.select('.chart')
+//     .selectAll('p')
+//     .data(data)
+//     .enter()
+//     .append('p')
+//     .text(function(d) { return d; });

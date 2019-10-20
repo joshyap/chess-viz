@@ -7,7 +7,7 @@
     <title>Chess Visualizations</title>
     <link rel="stylesheet" href="style.css">    
 </head>
-<body>
+<body onload="getChessData()">
     <div class="chart">
         <h1>Chess ELO Visualizations</h1>
     </div>  
@@ -15,7 +15,7 @@
         <p>Chess Blitz highest rating: <span id='chess_blitz'></span></p>
         <p>Chess Bullet highest rating: <span id='chess_bullet'></span></p>
         <p>Lessons highest rating: <span id='lessons'></span></p>
-        <p>Puzzle Rush highest rating: <span id='puzzle_rush'></span></p>
+        <p>Puzzle Rush best score: <span id='puzzle_rush'></span></p>
         <p>Tactics highest rating: <span id='tactics'></span></p>        
         <!-- chess_blitz, chess_bullet, lessons, puzzle_rush, tactics -->
     </div>
