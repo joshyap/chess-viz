@@ -26,6 +26,12 @@ async function getChessData() {
         data.tactics.highest.rating
     ]
     
+    d3.select(".d3-ratings").selectAll("p")
+        .data(chessData)
+        .enter()
+        .append("p")
+        .text((d) => d + " score");
+
     console.log(chessData);
 }
 
