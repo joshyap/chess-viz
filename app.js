@@ -33,6 +33,10 @@ async function getChessData() {
         .text((d) => d + " score");
 
     console.log(chessData);
+    
+    for (var i = 0; i<chessData.length; i++) {
+        d3.select("ul").append("li").text(chessData[i])
+    };
 }
 
 
