@@ -33,5 +33,20 @@ async function getChessData() {
         .enter()
         .append("div")
         .attr("class", "bar")        
-        .style("height", (d) => d/5 + "px");                
+        .style("height", (d) => d/5 + "px");         
+    
+
+        const w = 100;
+        const h = 100;
+
+    const chess_svg = d3.select(".d3_svg")
+                        .data(chessData)
+                        .enter()
+                        .append("svg")
+                        .append("rect")
+                        .attr("height", "30vh")
+                        .attr("width", "100vw")
+                        .attr("x", 50)
+                        .attr("y", 0)
+        
 }
