@@ -1,7 +1,13 @@
 const chess_url = 'https://api.chess.com/pub/player/yosh713/stats';
 
-let date = new Date();
-console.log(date);
+// let date = new Date();
+// console.log(date);
+
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 
 async function getChessData() {
     const response = await fetch(chess_url);
