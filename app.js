@@ -1,5 +1,8 @@
 const chess_url = 'https://api.chess.com/pub/player/yosh713/stats';
 
+let date = new Date();
+console.log(date);
+
 async function getChessData() {
     const response = await fetch(chess_url);
     const data = await response.json();
@@ -13,11 +16,11 @@ async function getChessData() {
     // ]
 
     let chessData = [
-        data.chess_blitz.best.rating,
-        data.chess_bullet.best.rating,
-        data.lessons.highest.rating,
-        // data.puzzle_rush.best.score,
-        data.tactics.highest.rating
+        "blitz: " + data.chess_blitz.last.rating,
+        "bullet: " + data.chess_bullet.last.rating,
+        "lessons: " + data.lessons.highest.rating,
+        // data.puzzle_rush.best.score, " puzzle rush ",
+        "tactics: " + data.tactics.highest.rating
     ]
 
     console.log(chessData);
@@ -26,7 +29,7 @@ async function getChessData() {
         .data(chessData)
         .enter()
         .append("p")
-        .text((d) => d + " score");
+        .text((d) => d /* + " score" */);
 
     d3.select(".d3_chart").selectAll("div")
         .data(chessData)
